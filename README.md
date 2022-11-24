@@ -4,7 +4,7 @@ Plan:
 
 - Install all the relevent packages: express, dotenv, morgan, pg, nodemon 
 - Create and set up app.js 
-- Ensure express is running and listening at http:/localhost:3000 
+- Ensure express is running and listening at http:/localhost:3005 
 - Add the routes and test get method using postman 
 - Create a Database with ElephantSQL following the database structure 
 - Create environment variables 
