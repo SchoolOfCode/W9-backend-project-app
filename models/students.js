@@ -16,14 +16,14 @@ async function createStudent(firstName, lastName) {
   const newStudent = await query(
     `INSERT INTO studentdata(firstName,lastName) VALUES ('${firstName}','${lastName}');`
   );
-  return newBootcamper;
+  return newStudent.rows;
 }
 
 async function searchStudentById(id) {
   const result = await query(`SELECT * FROM studentdata WHERE studentID = $1`, [
     id,
   ]);
-  return result.rows[0];
+  return result.rows;
 }
 
 async function updateStudentById(id, firstName, lastName) {
@@ -34,9 +34,10 @@ async function updateStudentById(id, firstName, lastName) {
 }
 
 async function deleteStudentById(id) {
-  const deletedStudent = await query(`DELETE FROM studentdata WHERE id=$1`, [
-    id,
-  ]);
+  const deletedStudent = await query(
+    `DELETE FROM studentdata WHERE studentID = $1`,
+    [id]
+  );
   console.log(deletedStudent);
   return deletedStudent;
 }

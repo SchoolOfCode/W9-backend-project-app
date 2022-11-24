@@ -15,7 +15,7 @@ router.get("/", async function (req, res) {
   res.json({ success: true, payload: result });
 });
 
-router.get("/:name", async function (req, res) {
+router.get("/name/:name", async function (req, res) {
   const result = await searchStudentByName(req.params.name);
   res.json({ success: true, payload: result });
 });
@@ -40,7 +40,7 @@ router.patch("/:id", async function (req, res) {
 });
 
 router.delete("/:id", async function (req, res) {
-  const result = deleteStudentById(req.params.studentID);
+  const result = deleteStudentById(req.params.id);
   res.json({ success: true, payload: result });
 });
 

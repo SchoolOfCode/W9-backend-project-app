@@ -1,8 +1,10 @@
 const express = require("express");
 const morgan = require("morgan");
 const app = express();
-const PORT = 3000;
+const PORT = 3005;
 //const PORT = process.env.PORT;
+
+const cors = require("cors");
 
 const studentsRouter = require("./routes/studentsRouter.js");
 const calendarRouter = require("./routes/calendarRouter.js");
@@ -13,6 +15,8 @@ const gamesRouter = require("./routes/gamesRouter.js");
 const videosRouter = require("./routes/videosRouter.js");
 
 app.use(morgan("dev"));
+
+app.use(cors("*"));
 
 app.use(express.json());
 
