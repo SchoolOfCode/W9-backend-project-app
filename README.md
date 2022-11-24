@@ -15,5 +15,6 @@ Plan:
   - Plan our routes using CRUD method
   - Plan our functionality in models
 - Hook up models and routes
+- Test all the CRUD routes using postman
 - Test the backend
 - Refactor the code
