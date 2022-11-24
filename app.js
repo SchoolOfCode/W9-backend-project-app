@@ -4,6 +4,7 @@ const app = express();
 const PORT = 3000;
 //const PORT = process.env.PORT;
 
+const studentsRouter = require("./routes/studentsRouter.js");
 const calendarRouter = require("./routes/calendarRouter.js");
 const documentRouter = require("./routes/documentRouter.js");
 const fitnessRouter = require("./routes/fitnessRouter.js");
@@ -15,6 +16,7 @@ app.use(morgan("dev"));
 
 app.use(express.json());
 
+app.use("/students", studentsRouter);
 app.use("/calendar", calendarRouter);
 app.use("/document", documentRouter);
 app.use("/fitness", fitnessRouter);
