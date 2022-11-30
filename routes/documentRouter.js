@@ -1,8 +1,11 @@
-const express = require("express");
-const router = express.Router();
+/* const express = require("express");
+const router = express.Router(); */
+import express from "express";
 
-router.get("/", async function (req, res) {
+const documentRouter = express.Router();
+
+documentRouter.get("/", async function (req, res) {
   res.send("This is the Document page");
 });
 
-module.exports = router;
+export { documentRouter };

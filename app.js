@@ -1,18 +1,19 @@
-const express = require("express");
-const morgan = require("morgan");
+import express from "express";
+import morgan from "morgan";
+
 const app = express();
 const PORT = 3005;
 //const PORT = process.env.PORT;
 
-const cors = require("cors");
+import cors from "cors";
 
-const studentsRouter = require("./routes/studentsRouter.js");
-const calendarRouter = require("./routes/calendarRouter.js");
-const documentRouter = require("./routes/documentRouter.js");
-const fitnessRouter = require("./routes/fitnessRouter.js");
-const flashcardsRouter = require("./routes/flashcardsRouter.js");
-const gamesRouter = require("./routes/gamesRouter.js");
-const videosRouter = require("./routes/videosRouter.js");
+import { studentsRouter } from "./routes/studentsRouter.js";
+import { calendarRouter } from "./routes/calendarRouter.js";
+import { documentRouter } from "./routes/documentRouter.js";
+import { wellbeingRouter } from "./routes/wellbeingRouter.js";
+import { flashcardsRouter } from "./routes/flashcardsRouter.js";
+import { gamesRouter } from "./routes/gamesRouter.js";
+import { videosRouter } from "./routes/videosRouter.js";
 
 app.use(morgan("dev"));
 
@@ -23,7 +24,7 @@ app.use(express.json());
 app.use("/students", studentsRouter);
 app.use("/calendar", calendarRouter);
 app.use("/document", documentRouter);
-app.use("/fitness", fitnessRouter);
+app.use("/wellbeing", wellbeingRouter);
 app.use("/flashcards", flashcardsRouter);
 app.use("/videos", videosRouter);
 app.use("/games", gamesRouter);
@@ -32,4 +33,4 @@ app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
 
-module.exports = app;
+export default app;

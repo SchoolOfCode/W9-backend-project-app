@@ -1,8 +1,9 @@
-const express = require("express");
-const router = express.Router();
+import express from "express";
 
-router.get("/", async function (req, res) {
+const videosRouter = express.Router();
+
+videosRouter.get("/", async function (req, res) {
   res.send("This is the videos page");
 });
 
-module.exports = router;
+export { videosRouter };
