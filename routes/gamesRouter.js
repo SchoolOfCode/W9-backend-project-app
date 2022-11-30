@@ -1,8 +1,10 @@
-const express = require("express");
-const router = express.Router();
+/* const express = require("express");
+const router = express.Router(); */
+import express from "express";
+const gamesRouter = express.Router();
 
-router.get("/", async function (req, res) {
+gamesRouter.get("/", async function (req, res) {
   res.send("This the Games page ");
 });
 
-module.exports = router;
+export { gamesRouter };

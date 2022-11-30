@@ -1,8 +1,10 @@
-const express = require("express");
-const router = express.Router();
+/* const express = require("express");
+const router = express.Router(); */
+import { Router } from "express";
+const calendarRouter = Router();
 
-router.get("/", async function (req, res) {
+calendarRouter.get("/", async function (req, res) {
   res.send("This is the Calendar page");
 });
 
-module.exports = router;
+export { calendarRouter };

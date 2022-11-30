@@ -1,8 +1,10 @@
-const express = require("express");
-const router = express.Router();
+/* const express = require("express");
+const router = express.Router(); */
+import express from "express";
+const flashcardsRouter = express.Router();
 
-router.get("/", async function (req, res) {
+flashcardsRouter.get("/", async function (req, res) {
   res.send("This is the Flachcards page");
 });
 
-module.exports = router;
+export { flashcardsRouter };
